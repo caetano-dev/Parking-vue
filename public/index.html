@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Estacionamento</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="sidebar">
+        <div class="button">
+        <li><button href="#" class="car_button">Carros</button></li>
+        <li><button href="#" class="ID_button">Placas</button></li>
+      </div>
+      </div>
+
+      <div class="parking_container">
+        <div class="price_label">
+            <div class= "label_content">
+                <span>Preço por hora: R$</span>
+                <input type="text" id="price" />
+                <button id="save_price">Salvar</button>
+            </div>
+        </div>
+
+        <div class="create_car">
+          <input type="text" id="name_input" placeholder="Adicionar um carro"/> 
+          <button type="submit" class="create_button">Adicionar</button>
+        </div>
+
+        <div class="parking_list">
+          <li class="car_li">
+            
+              <p>Car ID</p>
+              <p>time</p>
+              <p>price</p>
+            
+          </li>
+          <li class="car_li">
+            
+              <p>Car ID</p>
+              <p>time</p>
+              <p>price</p>
+            
+          </li>
+          <li class="car_li">
+            
+              <p>Car ID</p>
+              <p>time</p>
+              <p>price</p>
+            
+          </li>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
