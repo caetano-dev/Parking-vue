@@ -48,12 +48,12 @@ input {
 .parking_container {
   width: 100%;
   margin-left: 200px;
-  border: 1px solid #5e5e20;
+  /* border: 1px solid #5e5e20; */
   margin: 3rem 3rem 3rem 13rem;
 }
 /* input with prices */
 .price_label {
-  border: 1px solid #ffff0b;
+  /* border: 1px solid #ffff0b; */
   display: flex;
   padding: 1rem;
 }
@@ -61,16 +61,23 @@ input {
 .label_content {
   background-color: #ffffff;
   margin-left: auto;
-  border: 1px solid #ff0404;
+  /* border: 1px solid #ff0404; */
   border-radius: 5px;
   padding: 0.2rem;
 }
 .label_content input {
   width: 3rem;
 }
+
+.car_text {
+  display: flex;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+}
 /*add car*/
 .create_car {
-  border: 1px solid #76bfd7;
+  /* border: 1px solid #76bfd7; */
   display: flex;
   justify-content: center;
 }
@@ -78,7 +85,7 @@ input {
 /*car list and create car input*/
 .car_li,
 .create_car input {
-  border: 1px solid #5a02ff;
+  /* border: 1px solid #5a02ff; */
   background-color: #ffffff;
   display: flex;
   justify-content: space-between;
@@ -90,6 +97,7 @@ input {
   border-radius: 5px 0px 0px 5px;
   height: 3rem;
   width: 60%;
+  border: none;
 }
 .create_car input::placeholder {
   color: #000000;
@@ -97,6 +105,7 @@ input {
 }
 
 .create_car button {
+  width: 4rem;
   font-size: 12.5px;
   border-radius: 0px 5px 5px 0px;
   height: 3rem;
