@@ -3,77 +3,70 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <title>Estacionamento</title>
   </head>
   <body>
+    <!-- SIDEBAR -->
     <div class="wrapper">
       <div class="sidebar">
         <div class="button">
-        <li><button href="#" class="car_button">Carros</button></li>
-        <li><button href="#" class="ID_button">Placas</button></li>
-      </div>
-      </div>
-
-      <div class="parking_container">
-        <div class="price_label">
-            <div class= "label_content" id="label_content">
-                <span>Preço por hora: R$</span>
-                <input type="text" id="price" />
-                <button id="save_price">Salvar</button>
-            </div>
+          <li><button href="#" class="car_button">Carros</button></li>
+          <li><button href="#" class="ID_button">Placas</button></li>
         </div>
-        <div class="car_text">
-        <h4>Digite a placa do carro aqui</h4>
       </div>
+      <!-- SIDEBAR -->
+      <main class="parking_container" id="parking_container">
+        <!-- PRICE INPUT -->
+        <div class="price_label">
+          <div class="label_content" id="label_content">
+            <span>Preço por hora: R$</span>
+            <input type="number" id="price" />
+            <button id="save_price">Salvar</button>
+          </div>
+        </div>
+        <!-- PRICE INPUT -->
+        <!-- CREATE CAR INPUT -->
+        <div class="car_text">
+          <h4>Placa do carro:</h4>
+        </div>
         <div class="create_car" id="create_car">
-          <input v-model="car_ID" @keyup.enter="add_car" type="text" id="name_input"/> 
+          <input
+            v-model="car_number"
+            @keyup.enter="add_car"
+            type="text"
+            id="name_input"
+            minlength="8"
+            maxlength="8"/>
           <button @click="add_car" class="create_button">Adicionar</button>
         </div>
-
-        <script>
-        var create_car = new Vue({
-          el: '#create_car',
-          data: {
-            car_ID: 'Digite a placa aqui'
-          },
-          methods: {
-            add_car() {
-                console.log(this.car_ID)
-              }
-            }
-        })
-        
-        
-      </script>
-
-        <div class="parking_list">
-          <li class="car_li">
-            
-              <p>Car ID</p>
-              <p>time</p>
-              <p>price</p>
-            
+        <!-- CREATE CAR INPUT -->
+        <!-- CAR LIST -->
+        <div class="parking_list" id="parking_list">
+          <li
+            class="car_li"
+            id="car_li"
+            v-for="item in cars"
+            v-bind:car_number="item"
+            v-bind:key="item.id"
+          >
+            <p>{{ item.title }}</p>
+            <p>time</p>
+            <p>price</p>
+            <button @click="remove_car(car)" type="button" name="button">
+              Deletar
+            </button>
           </li>
-          <li class="car_li">
-            
-              <p>Car ID</p>
-              <p>time</p>
-              <p>price</p>
-            
-          </li>
-          <li class="car_li">
-            
-              <p>Car ID</p>
-              <p>time</p>
-              <p>price</p>
-            
-          </li>
-
         </div>
-      </div>
+      </main>
+      <!-- CAR LIST -->
     </div>
+    <script type="text/javascript" src="ParkingList.js"></script>
+    <script type="text/javascript" src="CreateCar.js"></script>
   </body>
 </html>
