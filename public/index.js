@@ -1,22 +1,28 @@
-var create_car = new Vue({
-    el: '#parking_container',
-    data: {
-        car_number: '',
-        cars: []
-    },
-    methods: {
-      add_car() {
-        if(this.car_number != ''){
-            this.cars.push({
-                title: this.car_number,
-                complete: false  
-            })
-          console.log(this.car_number)
-            }
-        },
-        remove_car(car){
-            const car_index = this.cars.indexOf(car)
-            this.cars.splice(car_index, 1)
-        }
+var CreateCar = new Vue({
+  el: "#ParkingContainer",
+  data: {
+    CarNumber: "",
+    cars: [],
+  },
+
+  methods: {
+    AddCar() {
+      const FormatCar1 = this.CarNumber.substring(0, this.CarNumber.length - 4);
+      const FormatCar2 = this.CarNumber.slice(3);
+      const FinalCarNumber = FormatCar1 + "-" + FormatCar2s;
+      if (this.CarNumber != "") {
+        this.cars.push({
+          id: Date.now(),
+          complete: false,
+          title: FinalCarNumber.toUpperCase(),
+        });
+        console.log(this.CarNumber);
+        this.CarNumber = "";
       }
-  })
+    },
+    RemoveCar(car) {
+      const CarIndex = this.cars.indexOf(car);
+      this.cars.splice(CarIndex, 1);
+    },
+  },
+});
