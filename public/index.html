@@ -13,52 +13,60 @@
   </head>
   <body>
     <!-- SIDEBAR -->
-    <div class="wrapper">
-      <div class="sidebar">
-        <div class="button">
-          <li><button href="#" class="car_button">Carros</button></li>
+    <div class="Wrapper">
+      <div class="Sidebar">
+        <div class="SidebarButtons">
+          <li><button href="#" class="CarButton">Carros</button></li>
           <li><button href="#" class="ID_button">Placas</button></li>
         </div>
       </div>
       <!-- SIDEBAR -->
-      <main class="parking_container" id="parking_container">
+      <main class="ParkingContainer" id="ParkingContainer">
         <!-- PRICE INPUT -->
-        <div class="price_label">
-          <div class="label_content" id="label_content">
+        <div class="PriceLabel">
+          <div class="LabelContent" id="LabelContent">
             <span>Preço por hora: R$</span>
-            <input type="number" id="price" />
-            <button id="save_price">Salvar</button>
+            <input type="number" id="Price" />
+            <button id="SavePrice">Salvar</button>
           </div>
         </div>
         <!-- PRICE INPUT -->
         <!-- CREATE CAR INPUT -->
-        <div class="car_text">
-          <h4>Placa do carro:</h4>
+        <div class="CarInputText">
+          <h4>Adicionar um carro:</h4>
         </div>
-        <div class="create_car" id="create_car">
-          <input
-            v-model="car_number"
-            @keyup.enter="add_car"
-            type="text"
-            id="name_input"
-            minlength="8"
-            maxlength="8"/>
-          <button @click="add_car" class="create_button">Adicionar</button>
+        <div class="AddCarWrapper">
+          <div class="CreateCar" id="CreateCar">
+            <label for="NameInput">Placa:</label>
+            <input
+              v-model="CarNumber"
+              @keyup.enter="AddCar"
+              type="text"
+              id="NameInput"
+              maxlength="7"
+            />
+            <button @click="AddCar" class="CreateButton">Adicionar</button>
+          </div>
         </div>
         <!-- CREATE CAR INPUT -->
         <!-- CAR LIST -->
-        <div class="parking_list" id="parking_list">
+        <div class="ParkingList" id="ParkingList">
           <li
-            class="car_li"
-            id="car_li"
+            class="CarList"
+            id="CarList"
             v-for="item in cars"
-            v-bind:car_number="item"
+            v-bind:CarNumber="item"
             v-bind:key="item.id"
           >
             <p>{{ item.title }}</p>
             <p>time</p>
             <p>price</p>
-            <button @click="remove_car(car)" type="button" name="button">
+            <button
+              @click="RemoveCar(car)"
+              class="DeleteButton"
+              type="button"
+              name="button"
+            >
               Deletar
             </button>
           </li>
@@ -66,7 +74,6 @@
       </main>
       <!-- CAR LIST -->
     </div>
-    <script type="text/javascript" src="ParkingList.js"></script>
-    <script type="text/javascript" src="CreateCar.js"></script>
+    <script type="text/javascript" src="index.js"></script>
   </body>
 </html>
