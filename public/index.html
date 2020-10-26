@@ -26,8 +26,13 @@
         <div class="PriceLabel">
           <div class="LabelContent" id="LabelContent">
             <span>Preço por hora: R$</span>
-            <input type="number" id="Price" />
-            <button id="SavePrice">Salvar</button>
+            <input
+              type="number"
+              id="Price"
+              v-model.number="price"
+              @keyup.enter="AddPrice"
+              />
+            <button id="SavePrice" @click="AddPrice" >Salvar</button>
           </div>
         </div>
         <!-- PRICE INPUT -->
@@ -54,22 +59,26 @@
           <li
             class="CarList"
             id="CarList"
-            v-for="item in cars"
-            v-bind:CarNumber="item"
-            v-bind:key="item.id"
+            v-for="car in cars"
+            v-bind:key="car.id"
           >
-            <p>{{ item.title }}</p>
-            <p>time</p>
-            <p>price</p>
+            <p>{{ car.title }}</p>
+            <p>{{ car.time }}</p>
+            <p v-for="price in prices"
+            v-bind:key="price.id"
+            >{{ price.pay }}</p>
             <button
               @click="RemoveCar(car)"
               class="DeleteButton"
               type="button"
               name="button"
+              id="RemoveButton"
             >
               Deletar
             </button>
           </li>
+          <div>
+          </div>
         </div>
       </main>
       <!-- CAR LIST -->
