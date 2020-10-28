@@ -55,6 +55,12 @@
         </div>
         <!-- CREATE CAR INPUT -->
         <!-- CAR LIST -->
+        <div class="TableValues">
+          <span class="CarSpan">Placa</span>
+          <span class="CarSpan">Entrada</span>
+          <span class="CarSpan">Preço</span>
+        </div>
+
         <div class="ParkingList" id="ParkingList">
           <li
             class="CarList"
@@ -63,10 +69,10 @@
             v-bind:key="car.id"
           >
             <p>{{ car.title }}</p>
-            <p>{{ car.time }}</p>
+            <p>{{ car.hour }}:{{ car.minutes}}</p>
             <p v-for="price in prices"
             v-bind:key="price.id"
-            >{{ price.pay }}</p>
+            >R${{car.arriveTime - price.pay }}</p>
             <button
               @click="RemoveCar(car)"
               class="DeleteButton"

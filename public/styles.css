@@ -9,6 +9,16 @@
 body {
   background-color: #c4c4c4;
 }
+input {
+  outline: none;
+}
+button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  transition: 0.5s;
+}
+
 .Wrapper {
   display: flex;
 }
@@ -26,22 +36,11 @@ body {
   height: 39px;
   background: #76bfd7;
   border-radius: 5px;
-  outline: none;
   margin-bottom: 1rem;
   margin-left: 0.5rem;
   color: #ffffff;
   font-size: 20px;
-  border: none;
-  transition: 0.5s;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-input {
-  outline: none;
-}
-button {
-  cursor: pointer;
-  outline: none;
-  border: none;
 }
 
 .Sidebar button:hover {
@@ -131,19 +130,30 @@ button {
   font-size: 12.5px;
   border-radius: 0px 5px 5px 0px;
   height: 3rem;
-  border: none;
-  outline: none;
-  transition: 0.5s;
 }
 
 .CreateCar button:hover {
   background-color: #ffffff;
 }
 
+.TableValues {
+  font-size: 20px;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+  padding-left: 3.5rem;
+  padding-right: 0.3rem;
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+.TableValues span {
+  padding-left: 0.3rem;
+}
+
 .CarList {
   font-size: 25px;
   border-radius: 10px;
   height: 4rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .CarList p {
@@ -154,4 +164,7 @@ button {
   height: 4rem;
   width: 4rem;
   border-radius: 0px 10px 10px 0px;
+}
+.DeleteButton:hover {
+  background-color: rgb(194, 70, 70);
 }
