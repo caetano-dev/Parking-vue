@@ -23,7 +23,7 @@
       <!-- SIDEBAR -->
       <main class="ParkingContainer" id="ParkingContainer">
         <!-- PRICE INPUT -->
-        <div class="PriceLabel">
+        <div class="PriceLabelDiv">
           <div class="LabelContent" id="LabelContent">
             <span>Preço por hora: R$</span>
             <input
@@ -31,14 +31,14 @@
               id="Price"
               v-model.number="price"
               @keyup.enter="AddPrice"
-              />
-            <button id="SavePrice" @click="AddPrice" >Salvar</button>
+            />
           </div>
+          <button id="SavePrice" @click="AddPrice">Salvar</button>
         </div>
         <!-- PRICE INPUT -->
         <!-- CREATE CAR INPUT -->
         <div class="CarInputText">
-          <h4>Adicionar um carro:</h4>
+          <h4>Adicionar um carro</h4>
         </div>
         <div class="AddCarWrapper">
           <div class="CreateCar" id="CreateCar">
@@ -68,11 +68,20 @@
             v-for="car in cars"
             v-bind:key="car.id"
           >
-            <p>{{ car.title }}</p>
-            <p>{{ car.hour }}:{{ car.minutes}}</p>
-            <p v-for="price in prices"
-            v-bind:key="price.id"
-            >R${{car.arriveTime - price.pay }}</p>
+            <div class="CarWrapper">
+              <p>{{ car.title }}</p>
+            </div>
+
+            <div >
+              <p>{{ car.hour }}:{{ car.minutes}}</p>
+            </div>
+
+            <div >
+              <p v-for="price in prices" v-bind:key="price.id">
+                R${{car.arriveTime - price.pay }}
+              </p>
+            </div>
+
             <button
               @click="RemoveCar(car)"
               class="DeleteButton"
@@ -83,8 +92,7 @@
               Deletar
             </button>
           </li>
-          <div>
-          </div>
+          <div></div>
         </div>
       </main>
       <!-- CAR LIST -->
