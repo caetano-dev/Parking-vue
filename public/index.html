@@ -72,11 +72,11 @@
               <p>{{ car.title }}</p>
             </div>
 
-            <div >
+            <div>
               <p>{{ car.hour }}:{{ car.minutes}}</p>
             </div>
 
-            <div >
+            <div>
               <p v-for="price in prices" v-bind:key="price.id">
                 R${{car.arriveTime - price.pay }}
               </p>
