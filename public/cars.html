@@ -1,44 +1,33 @@
 <!DOCTYPE html>
-<html lang="pt_BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <title>Estacionamento</title>
-  </head>
-  <body>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
+          rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="cars.css" />
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <title>Checar Placas</title>
+      </head>
+<body>
     <!-- SIDEBAR -->
     <div class="Container">
       <div class="Sidebar">
         <div class="SidebarButtons">
-          <li><a href="#" class="CarButton">Carros</a></li>
-          <li><a href="./cars.html" class="ID_button">Placas</a></li>
+          <li><a href="./index.html" class="CarButton">Carros</a></li>
+          <li><a href="#" class="ID_button">Placas</a></li>
         </div>
       </div>
       <!-- SIDEBAR -->
       <main class="ParkingContainer" id="ParkingContainer">
         <!-- PRICE INPUT -->
-        <div class="PriceLabelDiv">
-          <div class="LabelContent" id="LabelContent">
-            <span>Preço por hora: R$</span>
-            <input
-              type="number"
-              id="Price"
-              v-model.number="price"
-              @keyup.enter="AddPrice"
-            />
-          </div>
-          <button id="SavePrice" @click="AddPrice">Salvar</button>
-        </div>
         <!-- PRICE INPUT -->
         <!-- CREATE CAR INPUT -->
         <div class="CarInputText">
-          <h4>Adicionar um carro</h4>
+          <h4>Checar a legalidade dos veículos</h4>
         </div>
         <div class="AddCarWrapper">
           <div class="CreateCar" id="CreateCar">
@@ -50,15 +39,14 @@
               id="NameInput"
               maxlength="7"
             />
-            <button @click="AddCar" class="CreateButton">Adicionar</button>
+            <button @click="AddCar" class="CreateButton">Checar</button>
           </div>
         </div>
         <!-- CREATE CAR INPUT -->
         <!-- CAR LIST -->
         <div class="TableValues">
           <span class="CarSpan">Placa</span>
-          <span class="CarSpan">Entrada</span>
-          <span class="CarSpan">Preço</span>
+          <span class="CarSpan">Status</span>
         </div>
 
         <div class="ParkingList" id="ParkingList">

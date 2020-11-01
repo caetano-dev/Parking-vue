@@ -64,38 +64,6 @@ button {
   margin: 3rem 3rem 3rem 13rem;
 }
 /* input with prices */
-.PriceLabelDiv {
-  display: flex;
-  padding: 1rem;
-}
-
-#SavePrice {
-  border-radius: 0px 5px 5px 0px;
-  background-color: #e6e6e6;
-  padding-bottom: 3px;
-  width: 3rem;
-}
-#SavePrice:hover {
-  background-color: #ffffff;
-}
-
-/* content from PriceLabel */
-.LabelContent {
-  background-color: #ffffff;
-  margin-left: auto;
-  border-radius: 5px 0px 0px 5px;
-  padding-left: 0.2rem;
-}
-.LabelContent input {
-  width: 4.3rem;
-  height: 2rem;
-  background-color: #e6e6e6;
-  border: none;
-  font-size: 20px;
-  font-weight: bold;
-  text-align: center;
-  border: 1px solid #ffffff;
-}
 
 .CarInputText {
   display: flex;
@@ -148,8 +116,9 @@ button {
 }
 
 .CarList {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr auto;
+  display: flex;
+  /* grid-template-columns: 1fr 1fr 1fr auto; */
+  justify-content: space-between;
   font-size: 25px;
   border-radius: 10px;
   height: 4rem;
@@ -169,7 +138,7 @@ button {
   margin: 0rem 0rem 0.5rem 0rem;
   padding-right: 3.7rem;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   font-size: 20px;
   border-radius: 5px;
 }
