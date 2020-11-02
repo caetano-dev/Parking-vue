@@ -117,8 +117,9 @@ button {
 
 .CarList {
   display: flex;
-  /* grid-template-columns: 1fr 1fr 1fr auto; */
   justify-content: space-between;
+  /* grid-template-columns: 1fr 1fr 1fr; */
+
   font-size: 25px;
   border-radius: 10px;
   height: 4rem;
@@ -136,7 +137,6 @@ button {
 .TableValues {
   background-color: #ffffff31;
   margin: 0rem 0rem 0.5rem 0rem;
-  padding-right: 3.7rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   font-size: 20px;
@@ -144,7 +144,7 @@ button {
 }
 .TableValues span {
   text-align: center;
-  margin: 0rem 1rem 0rem 1rem;
+  margin-right: 5.5rem;
 }
 
 .DeleteButton {
