@@ -61,13 +61,7 @@
             </div>
 
             <div>
-              <p>{{ car.hour }}:{{ car.minutes}}</p>
-            </div>
-
-            <div>
-              <p v-for="price in prices" v-bind:key="price.id">
-                R${{car.arriveTime - price.pay }}
-              </p>
+              <p>status</p>
             </div>
 
             <button
@@ -86,5 +80,6 @@
       <!-- CAR LIST -->
     </div>
     <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="cars.js"></script>
   </body>
 </html>
