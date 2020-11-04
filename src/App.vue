@@ -4,7 +4,7 @@
       <Sidebar />
       <main class="ParkingContainer" id="ParkingContainer">
         <div class="CarInputText">
-          <h4>Adicionar um carro</h4>
+          <h2>Adicionar um carro</h2>
         </div>
         <div class="AddCarWrapper">
           <Createcar />
@@ -27,5 +27,5 @@ export default {
 </script>
 
 <style>
-@import './components/styles.css';
+@import "./components/styles.css";
 </style>

@@ -26,36 +26,43 @@
       <button @click="AddCar" class="CreateButton">Adicionar</button>
     </div>
     <div class="TableValues" id="Tablevalues">
-    <span class="CarSpan">Placa</span>
-    <span class="CarSpan">Entrada</span>
-    <span class="CarSpan">Preço</span>
-  </div>
+      <span class="CarSpan">Placa</span>
+      <span class="CarSpan">Entrada</span>
+      <span class="CarSpan">Preço</span>
+    </div>
     <div class="ParkingList" id="ParkingList">
-      <li class="CarList" id="CarList" v-for="car in cars" v-bind:key="car.id">
-        <div class="CarWrapper">
-          <p>{{ car.title }}</p>
-        </div>
-
-        <div>
-          <p>{{ car.hour }}:{{ car.minutes }}</p>
-        </div>
-
-        <div>
-          <p v-for="price in pricelist" v-bind:key="price.id">
-            R${{ car.arriveTime - price.pay }}
-          </p>
-        </div>
-
-        <button
-          @click="RemoveCar(car)"
-          class="DeleteButton"
-          type="button"
-          name="button"
-          id="RemoveButton"
+      <div class="ParkingListBackground">
+        <li
+          class="CarList"
+          id="CarList"
+          v-for="car in cars"
+          v-bind:key="car.id"
         >
-          Deletar
-        </button>
-      </li>
+          <div class="CarWrapper">
+            <p>{{ car.title }}</p>
+          </div>
+
+          <div>
+            <p>{{ car.hour }}:{{ car.minutes }}</p>
+          </div>
+
+          <div>
+            <p v-for="price in pricelist" v-bind:key="price.id">
+              R${{ car.arriveTime - price.pay }}
+            </p>
+          </div>
+
+          <button
+            @click="RemoveCar(car)"
+            class="DeleteButton"
+            type="button"
+            name="button"
+            id="RemoveButton"
+          >
+            Deletar
+          </button>
+        </li>
+      </div>
     </div>
   </div>
 </template>
@@ -129,6 +136,4 @@ export default {
 };
 </script>
 
-<style>
-
-</style>
+<style></style>
