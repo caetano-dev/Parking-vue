@@ -1,0 +1,133 @@
+.Container {
+  display: flex;
+}
+
+.Container .Sidebar {
+  position: fixed;
+  width: 10rem;
+  height: 100%;
+  padding: 30px 0;
+  background-color: #2282b8;
+}
+
+.PriceLabelDiv {
+  display: flex;
+  padding: 1rem;
+}
+
+#SavePrice {
+  border-radius: 0px 5px 5px 0px;
+  background-color: #e6e6e6;
+  padding-bottom: 3px;
+  width: 3rem;
+}
+#SavePrice:hover {
+  background-color: #ffffff;
+}
+
+.LabelContent {
+  background-color: #ffffff;
+  margin-left: auto;
+  border-radius: 5px 0px 0px 5px;
+  padding-left: 0.2rem;
+}
+.LabelContent input {
+  width: 4.3rem;
+  height: 2rem;
+  background-color: #e6e6e6;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid #ffffff;
+}
+
+.CreateCar input,
+.CreateCar label {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0rem 0rem 0.5rem 0rem;
+}
+.CreateCar {
+  display: flex;
+  justify-content: center;
+  height: 5rem;
+}
+.CreateCar label {
+  padding-left: 0.5rem;
+  border-radius: 5px 0px 0px 5px;
+  font-size: 15px;
+  height: 3rem;
+}
+
+.CreateCar input {
+  font-size: 12.5px;
+  height: 3rem;
+  width: 30%;
+  border: none;
+  padding-left: 5px;
+  text-transform: uppercase;
+}
+
+.CreateCar button {
+  width: 4rem;
+  font-size: 12.5px;
+  border-radius: 0px 5px 5px 0px;
+  height: 3rem;
+}
+
+.CreateCar button:hover {
+  background-color: #ffffff;
+}
+
+.CarList {
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto auto;
+  font-size: 1.6rem;
+  height: 4rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  background-color: #ffffff;
+  align-items: center;
+  margin: 0rem 0rem 0.5rem 0rem;
+}
+
+.CarList p {
+  margin: 0rem 1rem 0rem 1rem;
+}
+
+.TableValues {
+  background-color: #ffffff31;
+  margin: 0rem 0rem 0.5rem 0rem;
+  padding-right: 8rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  font-size: 1.2rem;
+  border-radius: 0.3rem;
+}
+.TableValues span {
+  border-bottom: 1px solid #fdfdfd;
+  text-align: center;
+  margin: 0rem 1rem 0rem 1rem;
+}
+
+.DeleteButton {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 0px 10px 10px 0px;
+}
+.DeleteButton:hover {
+  background-color: rgb(194, 70, 70);
+}
+
+.CalculateButton {
+  height: 4rem;
+  width: 4rem;
+  border-right: 2px solid #ffffff;
+}
+
+.CalculateButton:hover {
+  background-color: #2282b8;
+}

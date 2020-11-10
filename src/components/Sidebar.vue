@@ -18,4 +18,6 @@ export default {
   },
 };
 </script>
-
+<style>
+@import "./styles/Sidebar.css";
+</style>
