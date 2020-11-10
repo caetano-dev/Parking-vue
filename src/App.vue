@@ -7,7 +7,7 @@
           <h2>Adicionar um carro</h2>
         </div>
         <div class="AddCarWrapper">
-          <Createcar />
+          <Carlist />
         </div>
       </main>
     </div>
@@ -16,16 +16,16 @@
 
 <script>
 import Sidebar from "./components/Sidebar";
-import Createcar from "./components/Createcar";
+import Carlist from "./components/Carlist";
 export default {
   name: "App",
   components: {
     Sidebar,
-    Createcar,
+    Carlist,
   },
 };
 </script>
 
 <style>
-@import "./components/styles.css";
+@import "./components/styles/App.css";
 </style>
