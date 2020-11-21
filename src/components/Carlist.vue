@@ -43,11 +43,11 @@
 
         <div>
           <p v-for="price in pricelist" v-bind:key="price.id">
-            R${{ car.arriveTime / price.price}}
+            R${{ leaveTime }}
           </p>
         </div>
         <button
-        @click="AddPrice(price)"
+        @click="AddPrice"
           class="CalculateButton"
           type="button"
           id="CalculateButton"
@@ -70,12 +70,14 @@
 
 <script>
 export default {
+  props: ["arriveTime", "leaveTime"],
+  
   data() {
     return {
       name: "Carlist",
       CarNumber: "",
       cars: [],
-      price: "",
+      price: 0,
       pricelist: [],
       currentDate: new Date(),
     }
@@ -86,17 +88,15 @@ export default {
       if (this.pricelist.length) {
         this.pricelist.splice(0);
       }
-      
       const hour = this.currentDate.getHours();
       const minutes = this.currentDate.getMinutes();
-      const priceId = this.currentDate.getTime();
-      const leaveTime = hour * 60 + minutes;
+      const priceId = Math.floor(Math.random() * 100)
+      this.leaveTime = hour * 60 + minutes;
       const price = this.price
-      console.log(price)
       this.pricelist.push({
         id: priceId,
-        leavetime: leaveTime,
-        price: price,
+        // leavetime: leaveTime,
+        priceToPay: price,
       });
     },
     AddCar() {
@@ -107,20 +107,21 @@ export default {
         this.CarNumber.length - 4
       );
       const LastCharacters = this.CarNumber.slice(3);
-      const FinalCarNumber = FirstCharacters + "-" + LastCharacters;
-
-      const carminutes = this.currentDate.getMinutes() < 10
-          ? "0" + this.currentDate.getMinutes()
-          : this.currentDate.getMinutes();
-      const arriveTime = hour * 60 + minutes;
-      const carId = this.currentDate.getTime();
+      const FinalCarNumber = (FirstCharacters + "-" + LastCharacters).toUpperCase();
+      const carminutes = minutes < 10
+          ? "0" + minutes
+          : minutes
+      this.arriveTime = hour * 60 + minutes;
+      const carId = Math.floor(Math.random() * 100)
       if (this.CarNumber) {
         this.cars.push({
           id: carId,
           hour: hour,
           minutes: carminutes,
-          title: FinalCarNumber.toUpperCase(),
-          arriveTime: arriveTime,
+          title: FinalCarNumber,
+          
+
+          // arriveTime: arriveTime,
         });
         this.CarNumber = "";
       }
