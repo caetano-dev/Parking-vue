@@ -8,10 +8,10 @@
             type="number"
             id="Price"
             v-model.number="price"
-            @keyup.enter="AddPrice"
+            @keyup.enter="UpdatePrice"
           />
         </div>
-        <button id="SavePrice" @click="AddPrice">Salvar</button>
+        <button id="SavePrice" @click="UpdatePrice">Salvar</button>
       </div>
     </div>
     <div class="CreateCar" id="Createcar">
@@ -42,12 +42,12 @@
         </div>
 
         <div>
-          <p v-for="price in pricelist" v-bind:key="price.id">
-            R${{ leaveTime }}
+          <p v-for="price in UpdatePricelist" v-bind:key="price.id">
+            R${{ price.newprice }}
           </p>
         </div>
         <button
-        @click="AddPrice"
+        @click="UpdatePrice"
           class="CalculateButton"
           type="button"
           id="CalculateButton"
@@ -70,33 +70,40 @@
 
 <script>
 export default {
-  props: ["arriveTime", "leaveTime"],
   
   data() {
     return {
+      currentDate: new Date(),
       name: "Carlist",
       CarNumber: "",
       cars: [],
       price: 0,
-      pricelist: [],
-      currentDate: new Date(),
+      // pricelist: [],
+      UpdatePricelist: [],
     }
   },
 
   methods: {
-    AddPrice() {
-      if (this.pricelist.length) {
-        this.pricelist.splice(0);
+    // AddPrice() {
+      // if (this.pricelist.length) {
+      //   this.pricelist.splice(0);
+      // }
+      // const price = this.price
+      // console.log(price)
+      // this.pricelist.push({
+      //   price: price,
+      // });
+    // },
+
+    UpdatePrice(){
+      if (this.UpdatePricelist.length) {
+        this.UpdatePricelist.splice(0);
       }
-      const hour = this.currentDate.getHours();
-      const minutes = this.currentDate.getMinutes();
+      const newprice = this.price * 100
       const priceId = Math.floor(Math.random() * 100)
-      this.leaveTime = hour * 60 + minutes;
-      const price = this.price
-      this.pricelist.push({
+      this.UpdatePricelist.push({
         id: priceId,
-        // leavetime: leaveTime,
-        priceToPay: price,
+        newprice: newprice,
       });
     },
     AddCar() {
@@ -111,7 +118,7 @@ export default {
       const carminutes = minutes < 10
           ? "0" + minutes
           : minutes
-      this.arriveTime = hour * 60 + minutes;
+      const arriveTime = hour * 60 + minutes;
       const carId = Math.floor(Math.random() * 100)
       if (this.CarNumber) {
         this.cars.push({
@@ -119,9 +126,7 @@ export default {
           hour: hour,
           minutes: carminutes,
           title: FinalCarNumber,
-          
-
-          // arriveTime: arriveTime,
+          arriveTime: arriveTime,
         });
         this.CarNumber = "";
       }
