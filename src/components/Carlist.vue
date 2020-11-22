@@ -43,13 +43,13 @@
 
         <div>
           <p v-for="price in pricelist" v-bind:key="price.id">
-            R${{ car.arriveTime - price.pay }}
+            R${{ car.arriveTime / price.price}}
           </p>
         </div>
         <button
+        @click="AddPrice(price)"
           class="CalculateButton"
           type="button"
-          name="button"
           id="CalculateButton"
         >
           Calcular Preço
@@ -90,10 +90,12 @@ export default {
       const minutes = currentDate.getMinutes();
       const priceId = currentDate.getTime();
       const leaveTime = hour * 60 + minutes;
-
+      const price = this.price
+      console.log(price)
       this.pricelist.push({
         id: priceId,
-        pay: leaveTime,
+        leavetime: leaveTime,
+        price: price,
       });
     },
     AddCar() {
@@ -111,7 +113,8 @@ export default {
         currentDate.getMinutes() < 10
           ? "0" + currentDate.getMinutes()
           : currentDate.getMinutes();
-      const arriveTime = hour * 60 + minutes;
+      const arriveTime = hour * 60 + minutes
+      console.log(arriveTime)
       const carId = currentDate.getTime();
       if (this.CarNumber) {
         this.cars.push({
@@ -122,7 +125,6 @@ export default {
           arriveTime: arriveTime,
         });
         this.CarNumber = "";
-        console.log(this.cars);
       }
     },
     RemoveCar(car) {
