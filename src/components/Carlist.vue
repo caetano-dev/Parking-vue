@@ -77,7 +77,8 @@ export default {
       cars: [],
       price: "",
       pricelist: [],
-    };
+      currentDate: new Date(),
+    }
   },
 
   methods: {
@@ -85,10 +86,10 @@ export default {
       if (this.pricelist.length) {
         this.pricelist.splice(0);
       }
-      const currentDate = new Date();
-      const hour = currentDate.getHours();
-      const minutes = currentDate.getMinutes();
-      const priceId = currentDate.getTime();
+      
+      const hour = this.currentDate.getHours();
+      const minutes = this.currentDate.getMinutes();
+      const priceId = this.currentDate.getTime();
       const leaveTime = hour * 60 + minutes;
       const price = this.price
       console.log(price)
@@ -99,9 +100,8 @@ export default {
       });
     },
     AddCar() {
-      const currentDate = new Date();
-      const hour = currentDate.getHours();
-      const minutes = currentDate.getMinutes();
+      const hour = this.currentDate.getHours();
+      const minutes = this.currentDate.getMinutes();
       const FirstCharacters = this.CarNumber.substring(
         0,
         this.CarNumber.length - 4
@@ -109,13 +109,11 @@ export default {
       const LastCharacters = this.CarNumber.slice(3);
       const FinalCarNumber = FirstCharacters + "-" + LastCharacters;
 
-      const carminutes =
-        currentDate.getMinutes() < 10
-          ? "0" + currentDate.getMinutes()
-          : currentDate.getMinutes();
-      const arriveTime = hour * 60 + minutes
-      console.log(arriveTime)
-      const carId = currentDate.getTime();
+      const carminutes = this.currentDate.getMinutes() < 10
+          ? "0" + this.currentDate.getMinutes()
+          : this.currentDate.getMinutes();
+      const arriveTime = hour * 60 + minutes;
+      const carId = this.currentDate.getTime();
       if (this.CarNumber) {
         this.cars.push({
           id: carId,
