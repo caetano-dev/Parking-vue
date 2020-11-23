@@ -47,7 +47,7 @@
           </p>
         </div>
         <button
-        @click="UpdatePrice"
+          @click="UpdatePrice"
           class="CalculateButton"
           type="button"
           id="CalculateButton"
@@ -70,7 +70,6 @@
 
 <script>
 export default {
-  
   data() {
     return {
       currentDate: new Date(),
@@ -78,48 +77,48 @@ export default {
       CarNumber: "",
       cars: [],
       price: 0,
-      // pricelist: [],
       UpdatePricelist: [],
-    }
+      timestamp: ""
+    };
   },
-
+  //created() {
+  //  setInterval(this.getNow, 1000);
+//},
   methods: {
-    // AddPrice() {
-      // if (this.pricelist.length) {
-      //   this.pricelist.splice(0);
-      // }
-      // const price = this.price
-      // console.log(price)
-      // this.pricelist.push({
-      //   price: price,
-      // });
-    // },
+//usefull for calculating prices later
+//    getNow() {
+//      const today = new Date();
+//      const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+//      this.timestamp = time;
+//    },
 
-    UpdatePrice(){
+    UpdatePrice() {
       if (this.UpdatePricelist.length) {
         this.UpdatePricelist.splice(0);
       }
-      const newprice = this.price * 100
-      const priceId = Math.floor(Math.random() * 100)
+      const priceId = Math.floor(Math.random() * 100);
+      const newprice = this.price
       this.UpdatePricelist.push({
         id: priceId,
         newprice: newprice,
       });
     },
     AddCar() {
-      const hour = this.currentDate.getHours();
-      const minutes = this.currentDate.getMinutes();
       const FirstCharacters = this.CarNumber.substring(
         0,
         this.CarNumber.length - 4
       );
       const LastCharacters = this.CarNumber.slice(3);
-      const FinalCarNumber = (FirstCharacters + "-" + LastCharacters).toUpperCase();
-      const carminutes = minutes < 10
-          ? "0" + minutes
-          : minutes
+      const FinalCarNumber = (
+        FirstCharacters +
+        "-" +
+        LastCharacters
+      ).toUpperCase();
+      const hour = this.currentDate.getHours();
+      const minutes = this.currentDate.getMinutes();
+      const carminutes = minutes < 10 ? "0" + minutes : minutes;
       const arriveTime = hour * 60 + minutes;
-      const carId = Math.floor(Math.random() * 100)
+      const carId = Math.floor(Math.random() * 100);
       if (this.CarNumber) {
         this.cars.push({
           id: carId,
