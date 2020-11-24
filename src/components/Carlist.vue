@@ -34,7 +34,7 @@
     <div class="ParkingList" id="ParkingList">
       <li class="CarList" id="CarList" v-for="car in cars" v-bind:key="car.id">
         <div class="CarWrapper">
-          <p>{{ car.title }}</p>
+          <p>{{ car.title | capitalize }}</p>
         </div>
 
         <div>
@@ -78,53 +78,45 @@ export default {
       cars: [],
       price: 0,
       UpdatePricelist: [],
-      timestamp: ""
+      timestamp: "",
     };
   },
   //created() {
   //  setInterval(this.getNow, 1000);
-//},
+  //},
   methods: {
-//usefull for calculating prices later
-//    getNow() {
-//      const today = new Date();
-//      const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-//      this.timestamp = time;
-//    },
+    //usefull for calculating prices later
+    //    getNow() {
+    //      const today = new Date();
+    //      const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    //      this.timestamp = time;
+    //    },
 
     UpdatePrice() {
       if (this.UpdatePricelist.length) {
         this.UpdatePricelist.splice(0);
       }
       const priceId = Math.floor(Math.random() * 100);
-      const newprice = this.price
+      const newprice = this.price;
       this.UpdatePricelist.push({
         id: priceId,
         newprice: newprice,
       });
     },
     AddCar() {
-      const FirstCharacters = this.CarNumber.substring(
-        0,
-        this.CarNumber.length - 4
-      );
-      const LastCharacters = this.CarNumber.slice(3);
-      const FinalCarNumber = (
-        FirstCharacters +
-        "-" +
-        LastCharacters
-      ).toUpperCase();
       const hour = this.currentDate.getHours();
       const minutes = this.currentDate.getMinutes();
       const carminutes = minutes < 10 ? "0" + minutes : minutes;
       const arriveTime = hour * 60 + minutes;
       const carId = Math.floor(Math.random() * 100);
+
+      console.log(name);
       if (this.CarNumber) {
         this.cars.push({
           id: carId,
           hour: hour,
           minutes: carminutes,
-          title: FinalCarNumber,
+          title: this.CarNumber,
           arriveTime: arriveTime,
         });
         this.CarNumber = "";
@@ -133,6 +125,15 @@ export default {
     RemoveCar(car) {
       const CarIndex = this.cars.indexOf(car);
       this.cars.splice(CarIndex, 1);
+    },
+  },
+  filters: {
+    capitalize(value) {
+      return (
+        value.substring(0, value.length - 4) +
+        "-" +
+        value.slice(3)
+      ).toUpperCase();
     },
   },
 };
