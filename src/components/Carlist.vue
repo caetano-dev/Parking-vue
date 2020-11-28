@@ -47,14 +47,6 @@
           </p>
         </div>
         <button
-          @click="UpdatePrice"
-          class="CalculateButton"
-          type="button"
-          id="CalculateButton"
-        >
-          Calcular Preço
-        </button>
-        <button
           @click="RemoveCar(car)"
           class="DeleteButton"
           type="button"
