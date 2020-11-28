@@ -1,7 +1,6 @@
 .Container {
   display: flex;
 }
-
 .Container .Sidebar {
   position: fixed;
   width: 10rem;
@@ -9,12 +8,10 @@
   padding: 30px 0;
   background-color: #2282b8;
 }
-
 .PriceLabelDiv {
   display: flex;
   padding: 1rem;
 }
-
 #SavePrice {
   border-radius: 0px 5px 5px 0px;
   background-color: #e6e6e6;
@@ -24,7 +21,6 @@
 #SavePrice:hover {
   background-color: #ffffff;
 }
-
 .LabelContent {
   background-color: #ffffff;
   margin-left: auto;
@@ -40,7 +36,6 @@
   text-align: center;
   border: 1px solid #ffffff;
 }
-
 .CreateCar input,
 .CreateCar label {
   background-color: #ffffff;
@@ -60,7 +55,6 @@
   font-size: 15px;
   height: 3rem;
 }
-
 .CreateCar input {
   font-size: 12.5px;
   height: 3rem;
@@ -69,18 +63,15 @@
   padding-left: 5px;
   text-transform: uppercase;
 }
-
 .CreateCar button {
   width: 4rem;
   font-size: 12.5px;
   border-radius: 0px 5px 5px 0px;
   height: 3rem;
 }
-
 .CreateCar button:hover {
   background-color: #ffffff;
 }
-
 .CarList {
   border-radius: 10px;
   display: grid;
@@ -93,15 +84,13 @@
   align-items: center;
   margin: 0rem 0rem 0.5rem 0rem;
 }
-
 .CarList p {
   margin: 0rem 1rem 0rem 1rem;
 }
-
 .TableValues {
   background-color: #ffffff31;
   margin: 0rem 0rem 0.5rem 0rem;
-  padding-right: 8rem;
+  padding-right: 4rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   font-size: 1.2rem;
@@ -112,7 +101,6 @@
   text-align: center;
   margin: 0rem 1rem 0rem 1rem;
 }
-
 .DeleteButton {
   height: 4rem;
   width: 4rem;
@@ -120,14 +108,4 @@
 }
 .DeleteButton:hover {
   background-color: rgb(194, 70, 70);
-}
-
-.CalculateButton {
-  height: 4rem;
-  width: 4rem;
-  border-right: 2px solid #ffffff;
-}
-
-.CalculateButton:hover {
-  background-color: #2282b8;
 }
