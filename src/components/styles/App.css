@@ -18,13 +18,11 @@ button {
   border: none;
   transition: 0.5s;
 }
-
 .ParkingContainer {
   width: 100%;
   margin-left: 200px;
   margin: 3rem 3rem 3rem 13rem;
 }
-
 .CarInputText {
   display: flex;
   justify-content: center;
