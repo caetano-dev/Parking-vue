@@ -42,8 +42,8 @@
         </div>
 
         <div>
-          <p v-for="price in UpdatePricelist" v-bind:key="price.id">
-            R${{ price.newprice }}
+          <p>
+            R${{ updatedTime/car.arriveTime}}
           </p>
         </div>
         <button
@@ -64,45 +64,47 @@
 export default {
   data() {
     return {
-      currentDate: new Date(),
       name: "Carlist",
       CarNumber: "",
       cars: [],
-      price: 0,
+      price: 1,
       UpdatePricelist: [],
-      timestamp: "",
+      updatedTime: 0,
     };
   },
-  //created() {
-  //  setInterval(this.getNow, 1000);
-  //},
+  created() {
+    setInterval(this.getPrice, 5000);
+  },
   methods: {
-    //usefull for calculating prices later
-    //    getNow() {
-    //      const today = new Date();
-    //      const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-    //      this.timestamp = time;
-    //    },
+    getPrice() {
+      const today = new Date();
+      const time = today.getHours() * 60 + today.getMinutes() * this.price 
+      this.updatedTime = time;
+    },
 
     UpdatePrice() {
+      //let currentDate = new Date();
+      //const hour = currentDate.getHours();
+      //const minutes = currentDate.getMinutes();
+      //const updatedTime = hour * 60 + minutes;
+
       if (this.UpdatePricelist.length) {
         this.UpdatePricelist.splice(0);
       }
       const priceId = Math.floor(Math.random() * 100);
-      const newprice = this.price;
+      //const newprice = Number(this.price * updatedTime / this.cars.arriveTime);
       this.UpdatePricelist.push({
         id: priceId,
-        newprice: newprice,
+        //newprice: newprice,
       });
     },
     AddCar() {
-      const hour = this.currentDate.getHours();
-      const minutes = this.currentDate.getMinutes();
+      let currentDate = new Date();
+      const hour = currentDate.getHours();
+      const minutes = currentDate.getMinutes();
       const carminutes = minutes < 10 ? "0" + minutes : minutes;
       const arriveTime = hour * 60 + minutes;
       const carId = Math.floor(Math.random() * 100);
-
-      console.log(name);
       if (this.CarNumber) {
         this.cars.push({
           id: carId,
