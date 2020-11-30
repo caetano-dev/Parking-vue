@@ -43,7 +43,7 @@
 
         <div>
           <p>
-            R${{ updatedTime/car.arriveTime}}
+            R${{ Math.floor(price * (updatedTime - car.arriveTime) / 60)}}
           </p>
         </div>
         <button
@@ -78,24 +78,16 @@ export default {
   methods: {
     getPrice() {
       const today = new Date();
-      const time = today.getHours() * 60 + today.getMinutes() * this.price 
+      const time = today.getHours() * 60 + today.getMinutes() 
       this.updatedTime = time;
     },
-
     UpdatePrice() {
-      //let currentDate = new Date();
-      //const hour = currentDate.getHours();
-      //const minutes = currentDate.getMinutes();
-      //const updatedTime = hour * 60 + minutes;
-
       if (this.UpdatePricelist.length) {
         this.UpdatePricelist.splice(0);
       }
       const priceId = Math.floor(Math.random() * 100);
-      //const newprice = Number(this.price * updatedTime / this.cars.arriveTime);
       this.UpdatePricelist.push({
         id: priceId,
-        //newprice: newprice,
       });
     },
     AddCar() {
