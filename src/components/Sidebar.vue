@@ -19,5 +19,5 @@ export default {
 };
 </script>
 <style>
-@import "./styles/Sidebar.css";
+@import "../styles/Sidebar.css";
 </style>

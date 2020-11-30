@@ -126,5 +126,5 @@ export default {
 </script>
 
 <style>
-@import "./styles/Carlist.css";
+@import "../styles/Carlist.css";
 </styles>
