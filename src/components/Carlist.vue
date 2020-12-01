@@ -15,14 +15,15 @@
       </div>
     </div>
     <div class="CreateCar" id="Createcar">
-      <label for="NameInput">Placa:</label>
-      <input
-        v-model="CarNumber"
-        @keyup.enter="AddCar"
-        type="text"
-        id="NameInput"
-        maxlength="7"
-      />
+      <label>Placa:</label>
+        <input
+          v-model="CarNumber"
+          :class="{GreyInput: CarNumber.length != 7}"
+          class="NameInput"
+          @keyup.enter="AddCar"
+          type="text"
+          maxlength="7"
+        />
       <button @click="AddCar" class="CreateButton">Adicionar</button>
     </div>
     <div class="TableValues" id="Tablevalues">
@@ -43,7 +44,7 @@
 
         <div>
           <p>
-            R${{ Math.floor(price * (updatedTime - car.arriveTime) / 60)}}
+            R${{ Math.floor((price * (updatedTime - car.arriveTime)) / 60) }}
           </p>
         </div>
         <button
@@ -78,7 +79,7 @@ export default {
   methods: {
     getPrice() {
       const today = new Date();
-      const time = today.getHours() * 60 + today.getMinutes() 
+      const time = today.getHours() * 60 + today.getMinutes();
       this.updatedTime = time;
     },
     UpdatePrice() {
