@@ -1,39 +1,32 @@
 <template>
   <div id="Main">
-    <div id="Pricelabel">
+    <div>
       <div class="PriceLabelDiv">
-        <div class="LabelContent" id="LabelContent">
+        <div class="LabelContent">
           <span>Preço por hora: R$</span>
-          <input
-            type="number"
-            id="Price"
-            v-model.number="price"
-            @keyup.enter="UpdatePrice"
-          />
+          <input type="number" v-model.number="price" />
         </div>
-        <button id="SavePrice" @click="UpdatePrice">Salvar</button>
       </div>
     </div>
-    <div class="CreateCar" id="Createcar">
+    <div class="CreateCar">
       <label>Placa:</label>
-        <input
-          v-model="CarNumber"
-          :class="{GreyInput: CarNumber.length != 7}"
-          class="NameInput"
-          @keyup.enter="AddCar"
-          type="text"
-          maxlength="7"
-        />
+      <input
+        v-model="CarNumber"
+        :class="{ GreyInput: CarNumber.length != 7 }"
+        class="NameInput"
+        @keyup.enter="AddCar"
+        type="text"
+        maxlength="7"
+      />
       <button @click="AddCar" class="CreateButton">Adicionar</button>
     </div>
-    <div class="TableValues" id="Tablevalues">
+    <div class="TableValues">
       <span class="CarSpan">Placa</span>
       <span class="CarSpan">Entrada</span>
       <span class="CarSpan">Preço</span>
     </div>
-
-    <div class="ParkingList" id="ParkingList">
-      <li class="CarList" id="CarList" v-for="car in cars" v-bind:key="car.id">
+    <div class="ParkingList">
+      <li class="CarList" v-for="car in cars" v-bind:key="car.id">
         <div class="CarWrapper">
           <p>{{ car.title | capitalize }}</p>
         </div>
@@ -82,17 +75,8 @@ export default {
       const time = today.getHours() * 60 + today.getMinutes();
       this.updatedTime = time;
     },
-    UpdatePrice() {
-      if (this.UpdatePricelist.length) {
-        this.UpdatePricelist.splice(0);
-      }
-      const priceId = Math.floor(Math.random() * 100);
-      this.UpdatePricelist.push({
-        id: priceId,
-      });
-    },
     AddCar() {
-      let currentDate = new Date();
+      const currentDate = new Date();
       const hour = currentDate.getHours();
       const minutes = currentDate.getMinutes();
       const carminutes = minutes < 10 ? "0" + minutes : minutes;
