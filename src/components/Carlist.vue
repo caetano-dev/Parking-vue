@@ -62,7 +62,6 @@ export default {
       CarNumber: "",
       cars: [],
       price: 1,
-      UpdatePricelist: [],
       updatedTime: 0,
     };
   },
