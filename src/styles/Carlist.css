@@ -1,13 +1,6 @@
 .Container {
   display: flex;
 }
-.Container .Sidebar {
-  position: fixed;
-  width: 10rem;
-  height: 100%;
-  padding: 30px 0;
-  background-color: #2282b8;
-}
 .PriceLabelDiv {
   display: flex;
   padding: 1rem;
