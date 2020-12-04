@@ -2,6 +2,10 @@
 
 Work in progress
 
+This is a parking management software built with [Vue.js](https://vuejs.org) that calculates time and prices for each car automatically.
+
+New features to be added soon!
+
 ## Project setup
 
 ```
