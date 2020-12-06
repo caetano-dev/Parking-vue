@@ -10,6 +10,8 @@
   margin-left: auto;
   border-radius: 0.3rem 0.3rem 0.3rem 0.3rem;
   padding-left: 0.2rem;
+  color: #32475b;
+  background-color: #3fb984;
 }
 .LabelContent input {
   width: 4.3rem;
@@ -18,8 +20,11 @@
   font-size: 1.3rem;
   font-weight: bold;
   text-align: center;
-  border: 0.1rem solid #ffffff;
+  border: 0.1rem solid #3fb984;
   border-radius: 0rem 0.3rem 0.3rem 0rem;
+  outline: none;
+  color: #32475b;
+  background-color: #1cc97e;
 }
 .CreateCar input,
 .CreateCar label {
@@ -39,23 +44,29 @@
   border-radius: 0.3rem 0rem 0rem 0.3rem;
   font-size: 0.9rem;
   height: 3rem;
+  color: #32475b;
+  background-color: #3fb984;
 }
 .CreateCar button {
   width: 4rem;
   height: 3rem;
   font-size: 0.8rem;
   border-radius: 0rem 0.3rem 0.3rem 0rem;
+  color: #32475b;
+  background-color: #3fb984;
 }
 .CreateCar button:hover {
-  background-color: #ffffff;
+  color: #3fb984;
+  background-color: #32475b;
 }
 .NameInput {
   height: 3rem;
   width: 30%;
-  font-size: 0.8rem;
-  border: none;
+  font-size: 1.3rem;
+  border: 0.1rem solid #3fb984;
   padding-left: 0.3rem;
   text-transform: uppercase;
+  color: #32475b;
 }
 .GreyInput {
   color: rgb(85, 84, 84);
@@ -68,15 +79,17 @@
   height: 4rem;
   box-shadow: 0rem 0.3rem 0.3rem rgba(0, 0, 0, 0.25);
   text-align: center;
-  background-color: #ffffff;
+  background-color: #32475b;
   align-items: center;
   margin: 0rem 0rem 0.5rem 0rem;
 }
 .CarList p {
   margin: 0rem 1rem 0rem 1rem;
+  color: #3fb984;
 }
 .TableValues {
-  background-color: #ffffff31;
+  background-color: #32475b;
+  color: #e5e2e2;
   margin: 0rem 0rem 0.5rem 0rem;
   padding-right: 4rem;
   display: grid;
@@ -85,7 +98,7 @@
   border-radius: 0.3rem;
 }
 .TableValues span {
-  border-bottom: 0.1rem solid #fdfdfd;
+  border-bottom: 0.1rem solid #3fb984;
   text-align: center;
   margin: 0rem 1rem 0rem 1rem;
 }
@@ -93,7 +106,10 @@
   height: 4rem;
   width: 4rem;
   border-radius: 0rem 0.5rem 0.5rem 0rem;
+  background-color: #3fb984;
+  color: #32475b;
 }
 .DeleteButton:hover {
-  background-color: rgb(194, 70, 70);
+  background-color: rgb(194, 90, 90);
+  color: #000000;
 }
