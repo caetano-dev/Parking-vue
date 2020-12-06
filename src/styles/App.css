@@ -7,10 +7,11 @@
   font-family: "Roboto", sans-serif;
 }
 body {
-  background-color: #c4c4c4;
+  background-color: #22313f;
 }
-input {
+input[type="text"] {
   outline: none;
+  background-color: #1cc97e;
 }
 button {
   cursor: pointer;
@@ -27,5 +28,5 @@ button {
   justify-content: center;
   font-size: 1.2rem;
   align-items: center;
-  color: #313131;
+  color: #3fb984;
 }
