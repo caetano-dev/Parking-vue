@@ -8,7 +8,6 @@
 .LabelDiv {
   display: flex;
   justify-content: space-between;
-  border: 1px solid #ffffff;
   padding: 1rem;
 }
 .PriceLabel,
