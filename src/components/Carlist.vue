@@ -8,7 +8,7 @@
         </div>
         <div class="SearchLabel">
           <img class= "SearchIcon" src="../assets/search.svg" alt="Search">
-          <input v-model="price" />
+          <input v-model="searchKey"/>
         </div>
       </div>
     </div>
@@ -66,12 +66,20 @@ export default {
       CarNumber: "",
       cars: [],
       price: 1,
+      searchKey: "",
       updatedTime: 0,
     };
   },
   created() {
     setInterval(this.getPrice, 5000);
   },
+  // computed:{
+  //   filteredItems(){
+  //     return this.cars.filter(car=>{
+  //       return car.title.toLowerCase().includes(this.searchKey)
+  //     })
+  //   }
+  // },
   methods: {
     getPrice() {
       const today = new Date();
