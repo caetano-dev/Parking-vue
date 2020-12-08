@@ -1,18 +1,27 @@
 .Container {
   display: flex;
 }
-.PriceLabelDiv {
+
+.SearchIcon {
+  width: 1.5rem;
+}
+.LabelDiv {
   display: flex;
+  justify-content: space-between;
+  border: 1px solid #ffffff;
   padding: 1rem;
 }
-.LabelContent {
-  margin-left: auto;
+.PriceLabel,
+.SearchLabel {
+  display: flex;
+  align-items: center;
   border-radius: 0.3rem 0.3rem 0.3rem 0.3rem;
   padding-left: 0.2rem;
   color: #32475b;
   background-color: #3fb984;
 }
-.LabelContent input {
+.PriceLabel input,
+.SearchLabel input {
   width: 4.3rem;
   height: 2rem;
   background-color: #e6e6e6;
