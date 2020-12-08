@@ -1,10 +1,14 @@
 <template>
   <div id="Main">
     <div>
-      <div class="PriceLabelDiv">
-        <div class="LabelContent">
+      <div class="LabelDiv">
+        <div class="PriceLabel">
           <span>Preço por hora: R$</span>
           <input type="number" min="0" v-model.number="price" />
+        </div>
+        <div class="SearchLabel">
+          <img class= "SearchIcon" src="../assets/search.svg" alt="Search">
+          <input v-model="price" />
         </div>
       </div>
     </div>
