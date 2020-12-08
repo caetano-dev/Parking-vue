@@ -30,7 +30,7 @@
       <span class="CarSpan">Preço</span>
     </div>
     <div class="ParkingList">
-      <li class="CarList" v-for="car in cars" v-bind:key="car.id">
+      <li class="CarList" v-for="car in filteredItems" v-bind:key="car.id">
         <div class="CarWrapper">
           <p>{{ car.title | capitalize }}</p>
         </div>
@@ -73,13 +73,13 @@ export default {
   created() {
     setInterval(this.getPrice, 5000);
   },
-  // computed:{
-  //   filteredItems(){
-  //     return this.cars.filter(car=>{
-  //       return car.title.toLowerCase().includes(this.searchKey)
-  //     })
-  //   }
-  // },
+  computed:{
+    filteredItems(){
+      const search = this.searchKey.toLowerCase().trim();
+      if (!search) return this.cars;
+      return this.cars.filter(c => c.title.toLowerCase().indexOf(search) > -1);
+    }
+  },
   methods: {
     getPrice() {
       const today = new Date();
