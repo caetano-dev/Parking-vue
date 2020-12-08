@@ -40,7 +40,7 @@
   height: 5rem;
 }
 .CreateCar label {
-  padding-left: 0.5rem;
+  padding: 0rem 0.5rem 0rem 0.5rem;
   border-radius: 0.3rem 0rem 0rem 0.3rem;
   font-size: 0.9rem;
   height: 3rem;
