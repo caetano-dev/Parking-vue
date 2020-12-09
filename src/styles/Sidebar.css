@@ -28,3 +28,12 @@
   color: #3fb984;
   width: 100%;
 }
+@media (max-width: 500px) {
+  .Sidebar {
+    width: 5rem;
+  }
+  .Sidebar a {
+    margin-left: 0.3rem;
+    font-size: 1.3rem;
+  }
+}
