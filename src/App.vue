@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <div class="Container">
-      <Sidebar />
       <main class="ParkingContainer" id="ParkingContainer">
         <div class="CarInputText">
           <h2>Adicionar um carro</h2>
@@ -15,12 +14,10 @@
 </template>
 
 <script>
-import Sidebar from "./components/Sidebar";
 import Carlist from "./components/Carlist";
 export default {
   name: "App",
   components: {
-    Sidebar,
     Carlist,
   },
 };
