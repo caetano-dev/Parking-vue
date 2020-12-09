@@ -3,7 +3,7 @@
     <div>
       <div class="LabelDiv">
         <div class="PriceLabel">
-          <span>Preço por hora: R$</span>
+          <span>Preço/hora: R$</span>
           <input type="number" min="0" v-model.number="price" />
         </div>
         <div class="SearchLabel">
