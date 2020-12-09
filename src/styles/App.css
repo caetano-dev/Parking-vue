@@ -30,8 +30,3 @@ button {
   align-items: center;
   color: #3fb984;
 }
-@media (max-width: 500px) {
-  .ParkingContainer {
-    margin: 3rem 3rem 3rem 7.5rem;
-  }
-}

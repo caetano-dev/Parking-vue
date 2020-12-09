@@ -1,5 +1,6 @@
 .Container {
   display: flex;
+  justify-content: center;
 }
 .SearchIcon {
   width: 1.5rem;
@@ -122,8 +123,5 @@
 @media (max-width: 500px) {
   .CarList {
     font-size: 1rem;
-  }
-  .TableValues {
-    background-color: #22313f;
   }
 }
