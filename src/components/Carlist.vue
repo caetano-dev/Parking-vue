@@ -108,7 +108,7 @@ export default {
       const minutes = currentDate.getMinutes();
       const carminutes = minutes < 10 ? "0" + minutes : minutes;
       const arriveTime = hour * 60 + minutes;
-      const carId = Math.floor(Math.random() * 100);
+      const carId = Math.floor(Math.random() * 1000);
       if (this.CarNumber && this.CarNumber.length == 7) {
         this.cars.push({
           id: carId,
