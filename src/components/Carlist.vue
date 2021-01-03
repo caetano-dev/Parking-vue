@@ -7,8 +7,8 @@
           <input type="number" min="0" v-model.number="price" />
         </div>
         <div class="SearchLabel">
-          <img class= "SearchIcon" src="../assets/search.svg" alt="Search">
-          <input v-model="searchKey"/>
+          <img class="SearchIcon" src="../assets/search.svg" alt="Search" />
+          <input v-model="searchKey" />
         </div>
       </div>
     </div>
@@ -73,12 +73,28 @@ export default {
   created() {
     setInterval(this.getPrice, 5000);
   },
-  computed:{
-    filteredItems(){
+  computed: {
+    filteredItems() {
       const search = this.searchKey.toLowerCase().trim();
       if (!search) return this.cars;
-      return this.cars.filter(c => c.title.toLowerCase().indexOf(search) > -1);
-    }
+      return this.cars.filter(
+        (c) => c.title.toLowerCase().indexOf(search) > -1
+      );
+    },
+  },
+  watch: {
+    cars: {
+      handler() {
+        console.log("cars array changed!");
+        localStorage.setItem("cars", JSON.stringify(this.cars));
+      },
+      deep: true,
+    },
+  },
+  mounted() {
+    console.log("App Mounted");
+    if (localStorage.getItem("cars"))
+      this.cars = JSON.parse(localStorage.getItem("cars"));
   },
   methods: {
     getPrice() {
