@@ -1,7 +1,5 @@
 # Parking Management Software
 
-Work in progress
-
 This is a parking management software built with [Vue.js](https://vuejs.org) that calculates time and prices for each car automatically.
 The format of the car license place is the _Mercosul_ one.
 ![Screenshot](./.github/images/screenshot.png)
